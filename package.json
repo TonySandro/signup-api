@@ -1,0 +1,26 @@
+{
+  "name": "register-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.25.1",
+    "@types/node": "^22.7.4",
+    "eslint-plugin-flowtype": "^8.0.3",
+    "ts-standard": "^12.0.2",
+    "typescript": "^5.6.2"
+  },
+  "ts-standard": {
+    "project": "./tsconfig.json"
+  },
+  "standard": {
+    "parser": "@babel/eslint-parser",
+    "plugins": [ "flowtype" ]
+  }
+}
