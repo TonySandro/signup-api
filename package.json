@@ -8,7 +8,7 @@
     "test:verbose": "jest --runInBand",
     "test:unit": "yarn test --watch -c jest-unit-config.js",
     "test:integration": "yarn test --watch -c jest-integration-config.js",
-    "test:stg": "yarn test --findRelatedTests",
+    "test:stg": "yarn test",
     "test:ci": "yarn test --coverage"
   },
   "keywords": [],
