@@ -10,7 +10,11 @@ const makeEncrypter = (): Encrypter => {
   return new EncrypterStub();
 };
 
-const makeSut = () => {
+interface SutTypes {
+  sut: DbAddAccount;
+  encrypterStub: Encrypter;
+}
+const makeSut = (): SutTypes => {
   const encrypterStub = makeEncrypter();
   const sut = new DbAddAccount(encrypterStub);
 
