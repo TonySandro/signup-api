@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "sucrase-node src/main/server.ts",
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
     "test:verbose": "jest --runInBand",
     "test:unit": "yarn test --watch -c jest-unit-config.js",
@@ -16,6 +17,7 @@
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",
+    "express": "^4.21.1",
     "mongodb": "^6.9.0",
     "validator": "^13.12.0"
   },
@@ -23,6 +25,7 @@
     "@babel/eslint-parser": "^7.25.1",
     "@shelf/jest-mongodb": "^4.3.2",
     "@types/bcrypt": "^5.0.2",
+    "@types/express": "^5.0.0",
     "@types/jest": "^29.5.13",
     "@types/mongodb": "^4.0.7",
     "@types/node": "^22.7.4",
