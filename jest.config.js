@@ -1,6 +1,4 @@
-import type { Config } from "jest";
-
-const config: Config = {
+module.exports = {
   roots: ["<rootDir>/src"],
   clearMocks: true,
   collectCoverageFrom: ["<rootDir>/src/**/*.ts"],
@@ -13,4 +11,4 @@ const config: Config = {
   },
 };
 
-export default config;
+
