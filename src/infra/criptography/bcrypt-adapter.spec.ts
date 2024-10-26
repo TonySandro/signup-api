@@ -5,6 +5,10 @@ jest.mock("bcrypt", () => ({
   async hash(): Promise<string> {
     return new Promise((resolve) => resolve("hash"));
   },
+
+  async compare(): Promise<Boolean> {
+    return new Promise((resolve) => resolve(true));
+  },
 }));
 
 interface SutTypes {
@@ -21,7 +25,7 @@ const makeSut = (): SutTypes => {
   };
 };
 describe("Bcrypt Adapter", () => {
-  test("Should call bcrypt with correct values", async () => {
+  test("Should call bcrypt.hash with correct values", async () => {
     const { sut, salt } = makeSut();
     const hashSpy = jest.spyOn(bcrypt, "hash");
 
@@ -45,5 +49,13 @@ describe("Bcrypt Adapter", () => {
 
     const promise = sut.hash("any_value");
     await expect(promise).rejects.toThrow();
+  });
+
+  test("Should call bcrypt.comparer with correct values", async () => {
+    const { sut } = makeSut();
+    const compareSpy = jest.spyOn(bcrypt, "compare");
+
+    await sut.compare("any_value", "any_hash");
+    expect(compareSpy).toHaveBeenCalledWith("any_value", "any_hash");
   });
 });
