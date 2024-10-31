@@ -1,9 +1,9 @@
-import { badRequest, serverError, success } from "./../../helpers/http-helper";
 import {
-  InvalidParamError,
-  MissingParamError,
-  ServerError,
-} from "../../errors";
+  badRequest,
+  serverError,
+  success,
+} from "./../../helpers/http/http-helper";
+import { MissingParamError, ServerError } from "../../errors";
 import { SignUpController } from "./signup";
 import {
   EmailValidator,
