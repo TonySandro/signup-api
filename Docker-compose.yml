@@ -13,12 +13,12 @@ services:
   api:
     container_name: signup-api-container
     build: .
-    image: signup-node
+    image: signup-api
     restart: always
     command: yarn debugs
     volumes:
-      - ./dist:/usr/src/signup-node/dist
-      - ./package.json:/usr/src/signup-node/package.json
+      - ./dist:/usr/src/signup-api/dist
+      - ./package.json:/usr/src/signup-api/package.json
     ports:
       - "5353:5353"
       - "9222:9222"
